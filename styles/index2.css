@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --mainTextColor-light:#000;
+    --secondaryTextColor-light:rgb(51 51 51);
+    --mainLinkColor-light:#0da2b8;
+    --mainBorderColor-light:rgb(218, 218, 218);
+    --mainBgColor-light:rgb(249, 250,251);
+
+    --mainTextColor-dark:#fff;
+    --secondaryTextColor-dark:#adb0b1;
+    --mainLinkColor-dark:rgb(30, 190,214);
+    --mainBorderColor-dark:#2b3031;
+    --mainBgColor-dark:#131415;
+    
+    --mainTextColor:var(--mainTextColor-dark);
+    --secondaryTextColor:var(--secondaryTextColor-dark);
+    --mainLinkColor:var(--mainLinkColor-dark);
+    --mainBorderColor:var(--mainBorderColor-dark);
+    --mainBgColor:var(--mainBgColor-dark);
+
+}
+
+
+*{
+    font-family: 'Readex Pro';
+    line-height: 1.5em;
+    box-sizing: border-box;
+    color: var(--mainTextColor);
+    
+}
+
+body{
+    background-color: var(--mainBgColor);
+    overflow-y: scroll;            
+}
+
+p, span, li{
+    color: var(--secondaryTextColor);
+    font-size: 1em;
+}
+
+a{
+    text-decoration: none;
+    color: var(--mainLinkColor);
+    font-weight: 500;
+}
+
+li{
+    line-height: 1.9em;
+}
+
+#container--main{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.section--page{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#wrapper--hero{
+    display: flex;
+    align-items: center;
+    gap: 4em;
+    position: fixed;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--mainBgColor);
+    justify-content: center;
+    z-index: 16;
+}
+
+#wrapper--section {
+    margin-top: 200px;
+}
+
+#bio, a{
+    font-weight: 300;
+}
+
+#user-name{
+    font-size: 40px;
+    line-height: 1em;
+}
+
+#profile-pic{
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+#email{
+    color: var(--mainTextColor);
+}
+
+#switch-button1 {
+    background-color: var(--mainBgColor);
+    color: var(--mainTextColor);
+}
+
+#switch-button2[disabled] {
+    background-color: var(--mainTextColor);
+    color: var(--mainBgColor);
+}
+
+@media(max-width:600px){
+    #profile-pic{
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.timeline {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 0 20px;
+    margin-top: 300px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-item-date {
+    width: 100px;
+    flex-shrink: 0;
+    color: var(--mainLinkColor);
+    text-align: center;
+}
+
+.timeline-item-content {
+    flex: 1;
+    padding-left: 20px;
+    border-left: 2px solid var(--mainBorderColor);
+}
+
+.timeline-item-title {
+    color: var(--mainTextColor);
+    margin-bottom: 5px;
+}
+
+.timeline-item-content p {
+    color: var(--secondaryTextColor);
+    margin-top: 5px;
+}
+
+
+.timeline-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 98px; 
+    transform: translateY(-50%);
+    height: 100%;
+    border-left: 2px solid var(--mainBorderColor);
+}
